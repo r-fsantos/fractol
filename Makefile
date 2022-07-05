@@ -6,13 +6,12 @@
 #    By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 21:10:18 by rfelicio          #+#    #+#              #
-#    Updated: 2022/07/05 08:44:27 by rfelicio         ###   ########.fr        #
+#    Updated: 2022/07/05 09:50:00 by rfelicio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # project name
 NAME		:= fractol
-
 
 # mlx specs
 MLX_FLAGS	:= -lmlx -Ilmlx -lXext -lX11
@@ -26,12 +25,13 @@ ifeq ($(shell uname),Darwin) # MacOS
 endif
 
 # compiler configs
-CC			:= clang
+CC			:= gcc
 CC_FLAGS	:= -Wall -Wextra -Werror
-# CC_FLAGS	= 
 
-# FLAGS		:= $(MLX_FLAGS) $(CC_FLAGS) $(LEAK_FLAGS)
-FLAGS		:= $(MLX_FLAGS) $(LEAK_FLAGS)
+FLAGS		:= $(CC_FLAGS) $(MLX_FLAGS) $(LEAK_FLAGS)
+
+HEADERS_DIR := ./includes
+HEADERS     := -I$(HEADERS_DIR)
 
 SRCS_DIR	:= ./src
 SRCS		:= $(SRCS_DIR)/main.c
@@ -42,10 +42,10 @@ OBJS		:= $(patsubst $(SRCS_DIR)/%.c, $(OBJS_DIR)/%.o, $(SRCS))
 all: $(NAME)
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
-	$(CC) $(FLAGS) $< -c -o $@
+	$(CC) $(FLAGS) $(HEADERS) $< -c -o $@
 
 $(NAME): $(OBJS_DIR) $(OBJS)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(FLAGS) $(HEADERS) $(OBJS) -o $(NAME)
 
 $(OBJS_DIR):
 	@mkdir -p obj

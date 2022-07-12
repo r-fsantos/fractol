@@ -6,32 +6,35 @@
 #    By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 21:10:18 by rfelicio          #+#    #+#              #
-#    Updated: 2022/07/05 09:50:00 by rfelicio         ###   ########.fr        #
+#    Updated: 2022/07/11 22:03:57 by rfelicio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # project name
 NAME		:= fractol
 
-# mlx specs
+# Flags
 MLX_FLAGS	:= -lmlx -Ilmlx -lXext -lX11
-
-# add Linux Leak flags
-LEAK_FLAGS	:= -g3 -fsanitize=address
+LEAK_FLAGS	:= 
 
 ifeq ($(shell uname),Darwin) # MacOS
 	MLX_FLAGS	:= -lmlx -framework OpenGL -framework AppKit
 	LEAK_FLAGS	:= -g3 -fsanitize=address
 endif
 
-# compiler configs
-CC			:= gcc
-CC_FLAGS	:= -Wall -Wextra -Werror
+# Libft
+LIBFT_DIR		:= ./libs/libft
+LIBFT_HEADERS 	:= $(LIBFT_DIR)/include
+LIBFT			:= $(LIBFT_DIR)/libft.a
+LIBFT_MAKE		:= make -C $(LIBFT_DIR)
+LIBFT_CLEAN		:= make clean -C $(LIBFT_DIR)
+LIBFT_FCLEAN	:= make fclean -C $(LIBFT_DIR)
+LIBFT_RE		:= make re -C $(LIBFT_DIR)
+LIBFT_FLAGS		:= -L $(LIBFT_DIR) -lft
 
-FLAGS		:= $(CC_FLAGS) $(MLX_FLAGS) $(LEAK_FLAGS)
-
+# Fractol
 HEADERS_DIR := ./includes
-HEADERS     := -I$(HEADERS_DIR)
+HEADERS     := -I $(HEADERS_DIR) -I $(LIBFT_HEADERS)
 
 SRCS_DIR	:= ./src
 SRCS		:= $(SRCS_DIR)/main.c
@@ -39,13 +42,24 @@ SRCS		:= $(SRCS_DIR)/main.c
 OBJS_DIR	:= ./obj
 OBJS		:= $(patsubst $(SRCS_DIR)/%.c, $(OBJS_DIR)/%.o, $(SRCS))
 
+# compiler configs
+CC			:= gcc
+CC_FLAGS	:= -Wall -Wextra -Werror 
+
+FLAGS		:= $(CC_FLAGS) $(MLX_FLAGS) $(LIBFT_FLAGS) $(LEAK_FLAGS)
+
 all: $(NAME)
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
-	$(CC) $(FLAGS) $(HEADERS) $< -c -o $@
+	@echo "Compilling..."
+	$(CC) $(CC_FLAGS) $(HEADERS) $< -c -o $@
+	@echo
 
 $(NAME): $(OBJS_DIR) $(OBJS)
-	$(CC) $(FLAGS) $(HEADERS) $(OBJS) -o $(NAME)
+	@echo "Linking..."
+	$(LIBFT_MAKE)
+	$(CC) $(HEADERS) $(FLAGS) $(OBJS) -o $(NAME)
+	@echo
 
 $(OBJS_DIR):
 	@mkdir -p obj
@@ -53,14 +67,15 @@ $(OBJS_DIR):
 clean:
 	@echo "Cleaning object files..."
 	@echo
-	rm -rf obj
+	$(LIBFT_CLEAN)
 	@echo
+	@rm -rf obj
 	@echo "Finished cleaning object files"
 	@echo
 
 fclean: clean
 	@echo "Cleaning executable: $(NAME)"
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 	@echo
 
 re: fclean all

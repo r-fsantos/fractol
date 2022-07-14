@@ -24,11 +24,17 @@
 # define MANDELBROT "mandelbrot"
 # define JULIA "julia"
 
+# define BAD_INPUT "Entradas incompatíveis!"
+# define UNSUPORTED_FRACTOL "Fractol não suportado e/ou entrada inválida!"
+# define DEFAULT_HELP_MESSAGE "Favor referir-se ao README! :)"
+# define MLX_BAD_INIT "Erro de inicialização da minilibx"
+
 // Enums
 enum e_error_msg_codes
 {
 	e_bad_input = 0,
-	e_invalid_fractol = 1
+	e_invalid_fractol = 1,
+	e_mlx_bad_init = 2
 };
 
 enum e_fd
@@ -73,5 +79,8 @@ void	ft_set_mandelbrot(t_fractol *fractol);
 
 // Julia
 int		is_julia(char *str);
+
+// Mlx
+void	ft_mlx_init(t_fractol *fractol);
 
 #endif

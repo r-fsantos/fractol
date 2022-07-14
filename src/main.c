@@ -35,6 +35,6 @@ int	main(int argc, char **argv)
 		ft_puterror(e_bad_input);
 	ft_fractol_init(&fractol);
 	ft_start(argc, argv, &fractol);
-	// ft_mlx_init(&fractol);
+	ft_mlx_init(&fractol);
 	return (0);
 }

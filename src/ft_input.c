@@ -25,7 +25,7 @@ void	ft_start(int argc, char **argv, t_fractol *fractol)
 {
 	printf("%d %p %p", argc, argv, fractol);
 	if (is_mandelbrot(argv[1]))
-		printf("\nsim, é o mandel!\n");
+		ft_set_mandelbrot(fractol);
 	else if (is_julia(argv[1]))
 		printf("\nsim, é a julia!\n");
 	else

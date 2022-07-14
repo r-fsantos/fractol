@@ -6,7 +6,7 @@
 #    By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/26 15:30:16 by rfelicio          #+#    #+#              #
-#    Updated: 2021/08/22 17:45:21 by rfelicio         ###   ########.fr        #
+#    Updated: 2022/07/13 21:09:34 by rfelicio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SRC				=	$(SRC_DIR)/ft_isalpha.c			\
 					$(SRC_DIR)/ft_strchr.c			\
 					$(SRC_DIR)/ft_strrchr.c			\
 					$(SRC_DIR)/ft_strncmp.c			\
+					$(SRC_DIR)/ft_strcmp.c			\
 					$(SRC_DIR)/ft_memchr.c			\
 					$(SRC_DIR)/ft_memcmp.c			\
 					$(SRC_DIR)/ft_strnstr.c			\

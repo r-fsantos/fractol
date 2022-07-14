@@ -6,7 +6,7 @@
 #    By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 21:10:18 by rfelicio          #+#    #+#              #
-#    Updated: 2022/07/14 09:44:46 by rfelicio         ###   ########.fr        #
+#    Updated: 2022/07/14 10:46:39 by rfelicio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,8 +57,7 @@ FLAGS		:= $(CC_FLAGS) $(MLX_FLAGS) $(LIBFT_FLAGS) $(LEAK_FLAGS)
 all: $(NAME)
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
-	@echo "Compilling..."
-	$(CC) $(CC_FLAGS) $(HEADERS) $< -c -o $@
+	$(CC) $(CC_FLAGS) $(LEAK_FLAGS) $(HEADERS) $< -c -o $@
 	@echo
 
 $(NAME): $(OBJS_DIR) $(OBJS)

@@ -32,7 +32,28 @@ enum e_fd
 	e_fd_std_out = 1
 };
 
+// Structs
+typedef struct s_data
+{
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_lenght;
+	int		endian;
+}	t_data;
+
+typedef struct s_fractol
+{
+	char	*name;
+	t_data	img;
+	void	*mlx;
+	void	*mlx_win;
+}	t_fractol;
+
 // Error handlers
 void	ft_puterror(int e_error_code);
+
+// Fractol logic
+void	ft_fractol_init(t_fractol *fractol);
 
 #endif

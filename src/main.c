@@ -29,7 +29,10 @@
 */
 int	main(int argc, char **argv)
 {
+	t_fractol	fractol;
+
 	if (argc < 2 && argv)
 		ft_puterror(e_bad_input);
+	ft_fractol_init(&fractol);
 	return (0);
 }

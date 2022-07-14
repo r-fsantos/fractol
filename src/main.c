@@ -6,7 +6,7 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:18:26 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/07/11 22:12:27 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/07/13 21:46:59 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 */
 int	main(int argc, char **argv)
 {
-	printf("Hello, fract-ol\n");
+	if (argc < 2 && argv)
+		ft_puterror(e_bad_input);
 	return (0);
 }

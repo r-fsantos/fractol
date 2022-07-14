@@ -6,7 +6,7 @@
 #    By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 21:10:18 by rfelicio          #+#    #+#              #
-#    Updated: 2022/07/11 22:03:57 by rfelicio         ###   ########.fr        #
+#    Updated: 2022/07/14 08:52:17 by rfelicio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,14 +37,15 @@ HEADERS_DIR := ./includes
 HEADERS     := -I $(HEADERS_DIR) -I $(LIBFT_HEADERS)
 
 SRCS_DIR	:= ./src
-SRCS		:= $(SRCS_DIR)/main.c
+SRCS		:= $(SRCS_DIR)/main.c				\
+			   $(SRCS_DIR)/ft_put_errors.c		\
 
 OBJS_DIR	:= ./obj
 OBJS		:= $(patsubst $(SRCS_DIR)/%.c, $(OBJS_DIR)/%.o, $(SRCS))
 
 # compiler configs
 CC			:= gcc
-CC_FLAGS	:= -Wall -Wextra -Werror 
+CC_FLAGS	:= -Wall -Wextra -Werror
 
 FLAGS		:= $(CC_FLAGS) $(MLX_FLAGS) $(LIBFT_FLAGS) $(LEAK_FLAGS)
 

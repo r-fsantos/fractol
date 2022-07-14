@@ -32,6 +32,12 @@ enum e_fd
 	e_fd_std_out = 1
 };
 
+enum e_fractals
+{
+	e_mandelbrot = 0,
+	e_julia = 1
+};
+
 // Structs
 typedef struct s_data
 {
@@ -55,5 +61,11 @@ void	ft_puterror(int e_error_code);
 
 // Fractol logic
 void	ft_fractol_init(t_fractol *fractol);
+// Mandelbrot
+int		is_mandelbrot(char *str);
+void	ft_set_mandelbrot(t_fractol *fractol);
+
+// Julia
+int		is_julia(char *str);
 
 #endif

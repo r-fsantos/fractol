@@ -34,5 +34,7 @@ int	main(int argc, char **argv)
 	if (argc < 2 && argv)
 		ft_puterror(e_bad_input);
 	ft_fractol_init(&fractol);
+	ft_start(argc, argv, &fractol);
+	// ft_mlx_init(&fractol);
 	return (0);
 }

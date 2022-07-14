@@ -40,6 +40,7 @@ SRCS_DIR	:= ./src
 SRCS		:= $(SRCS_DIR)/main.c				\
 			   $(SRCS_DIR)/ft_put_errors.c		\
 			   $(SRCS_DIR)/ft_fractol.c			\
+			   $(SRCS_DIR)/ft_input.c			\
 			   $(SRCS_DIR)/ft_mandelbrot.c		\
 			   $(SRCS_DIR)/ft_julia.c			\
 

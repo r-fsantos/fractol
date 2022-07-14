@@ -20,6 +20,10 @@
 # include <errno.h>
 # include "libft.h"
 
+// Defines
+# define MANDELBROT "mandelbrot"
+# define JULIA "julia"
+
 // Enums
 enum e_error_msg_codes
 {
@@ -61,6 +65,8 @@ void	ft_puterror(int e_error_code);
 
 // Fractol logic
 void	ft_fractol_init(t_fractol *fractol);
+void	ft_start(int argc, char **argv, t_fractol *fractol);
+
 // Mandelbrot
 int		is_mandelbrot(char *str);
 void	ft_set_mandelbrot(t_fractol *fractol);

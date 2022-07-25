@@ -6,7 +6,7 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:23:10 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/07/14 10:33:53 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/07/25 10:19:52 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 # define UNSUPORTED_FRACTOL "Fractol não suportado e/ou entrada inválida!"
 # define DEFAULT_HELP_MESSAGE "Favor referir-se ao README! :)"
 # define MLX_BAD_INIT "Erro de inicialização da minilibx"
+# define WIN_WIDTH 700
+# define WIN_HEIGHT 700
 
 // Enums
 enum e_error_msg_codes
@@ -64,6 +66,8 @@ typedef struct s_fractol
 	t_data	img;
 	void	*mlx;
 	void	*mlx_win;
+	int		win_width;
+	int		win_height;
 }	t_fractol;
 
 // Error handlers

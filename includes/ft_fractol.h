@@ -6,7 +6,7 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:23:10 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/07/25 10:19:52 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/02 09:11:34 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ typedef struct s_fractol
 }	t_fractol;
 
 // Error handlers
-void	ft_puterror(int e_error_code);
+void	ft_puterror(int e_error_code, t_fractol *fractol);
 
 // Fractol logic
 void	ft_fractol_init(t_fractol *fractol);
@@ -86,5 +86,6 @@ int		is_julia(char *str);
 
 // Mlx
 void	ft_mlx_init(t_fractol *fractol);
+void	ft_should_close(t_fractol *fractol);
 
 #endif

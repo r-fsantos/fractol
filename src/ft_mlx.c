@@ -6,7 +6,7 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 09:40:59 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/02 09:14:52 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/13 18:06:29 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 
 static void	ft_setup_hooks(t_fractol *fractol);
 static int	ft_on_pressing_key(int key, t_fractol *fractol);
+static int	ft_on_zooming(int key, int x, int y, t_fractol *fractol);
 
 void	ft_mlx_init(t_fractol *fractol)
 {
@@ -41,6 +42,8 @@ void	ft_mlx_init(t_fractol *fractol)
 			);
 	if (!fractol->img.addr)
 		ft_puterror(e_mlx_bad_init, fractol);
+	ft_calculate_fractal(&(fractol->img), fractol->type);
+	mlx_put_image_to_window(fractol->mlx, fractol->mlx_win, fractol->img.img, 0, 0);
 	ft_setup_hooks(fractol);
 	mlx_loop(fractol->mlx);
 }
@@ -48,6 +51,9 @@ void	ft_mlx_init(t_fractol *fractol)
 static void	ft_setup_hooks(t_fractol *fractol)
 {
 	mlx_key_hook(fractol->mlx_win, ft_on_pressing_key, fractol);
+	mlx_mouse_hook(fractol->mlx_win, ft_on_zooming, fractol);
+	mlx_expose_hook(fractol->mlx_win, (void *)ft_calculate_fractal, fractol->mlx);
+	mlx_hook(fractol->mlx_win, 17, 1L << 0, ft_should_close, fractol);
 }
 
 static int	ft_on_pressing_key(int key, t_fractol *fractol)
@@ -56,16 +62,27 @@ static int	ft_on_pressing_key(int key, t_fractol *fractol)
 	{
 		ft_should_close(fractol);
 	}
+	else
+	{
+		printf("pressing key: %d\n", key);
+	}
 	return (0);
 }
 
-void	ft_should_close(t_fractol *fractol)
+static int	ft_on_zooming(int key, int x, int y, t_fractol *fractol)
+{
+	return printf("%s: Clicou com o mouse\nkey: %d\nx: %d  y: %d\n", fractol->name, key, x, y);
+}
+
+int	ft_should_close(t_fractol *fractol)
 {
 	if (fractol)
 	{
 		mlx_destroy_image(fractol->mlx, fractol->img.img);
 		mlx_destroy_window(fractol->mlx, fractol->mlx_win);
+		// mlx_destroy_display; trocar a ordem!!!
 		free(fractol->mlx);
 	}
 	exit(0);
+	return (0);
 }

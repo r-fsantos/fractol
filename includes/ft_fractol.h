@@ -6,7 +6,7 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:23:10 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/13 18:05:05 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/15 22:27:02 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,17 @@ enum e_fractals
 	e_julia = 1
 };
 
+enum e_keycodes
+{
+	e_left = 123,
+	e_right = 124,
+	e_down = 125,
+	e_up = 126,
+	e_zooming_in = 4,
+	e_zooming_out = 5,
+	e_esc = 53
+};
+
 // Structs
 typedef struct s_data
 {
@@ -99,6 +110,8 @@ int		is_julia(char *str);
 // Mlx
 void	ft_mlx_init(t_fractol *fractol);
 int		ft_should_close(t_fractol *fractol);
+void	ft_panning(int key, t_data *img);
+int		it_pressed_any_arrow_key(int key);
 
 // Colors
 void	ft_setup_colors(double x, double y, int iterations, t_data *img);

@@ -6,7 +6,7 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 08:47:36 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/13 18:10:23 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/13 18:18:32 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	is_mandelbrot(char *str)
 
 void	ft_set_mandelbrot(t_fractol *fractol)
 {
-	fractol->name = ft_strdup("Mandelbrot");
+	fractol->name = ft_strdup("Fract-ol Mandelbrot");
 	fractol->type = e_mandelbrot;
 }
 

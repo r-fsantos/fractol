@@ -6,7 +6,7 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:23:10 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/16 08:34:29 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/16 10:14:18 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 # include <stdio.h>
 # include <mlx.h>
 # include <errno.h>
-# include "../libs/libft/include/libft.h"
+# include <stdlib.h>
+// # include "../libs/libft/include/libft.h"
 
 // Defines
 # define MANDELBROT "mandelbrot"
@@ -134,8 +135,13 @@ int		ft_on_pressing_key(int key, t_fractol *fractol);
 int		ft_on_zooming(int key, int x, int y, t_fractol *fractol);
 void	ft_following_mouse(t_data *img, int x, int y);
 
-
 // Colors
 void	ft_setup_colors(double x, double y, int iterations, t_data *img);
+
+// Utils
+char	*ft_strdup(const char *s1);
+void	ft_bzero(void *s, size_t n);
+void	ft_putendl_fd(char *s, int fd);
+int		ft_strcmp(char *s1, char *s2);
 
 #endif

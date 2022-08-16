@@ -6,7 +6,7 @@
 #    By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 21:10:18 by rfelicio          #+#    #+#              #
-#    Updated: 2022/08/16 09:46:56 by rfelicio         ###   ########.fr        #
+#    Updated: 2022/08/16 10:12:31 by rfelicio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ LIBFT_FLAGS		:= -L $(LIBFT_DIR) -lft
 
 # Fractol
 HEADERS_DIR := ./includes
-HEADERS     := -I $(HEADERS_DIR) -I $(LIBFT_HEADERS)
+HEADERS     := -I $(HEADERS_DIR) #-I $(LIBFT_HEADERS)
 
 SRCS_DIR	:= ./src
 SRCS		:= $(SRCS_DIR)/main.c				\
@@ -46,7 +46,9 @@ SRCS		:= $(SRCS_DIR)/main.c				\
 			   $(SRCS_DIR)/ft_julia.c			\
 			   $(SRCS_DIR)/ft_mlx.c				\
 			   $(SRCS_DIR)/ft_hooks.c			\
-
+			   $(SRCS_DIR)/ft_utils.c			\
+			   $(SRCS_DIR)/ft_utils_2.c			\
+ 
 OBJS_DIR	:= ./obj
 OBJS		:= $(patsubst $(SRCS_DIR)/%.c, $(OBJS_DIR)/%.o, $(SRCS))
 
@@ -54,7 +56,7 @@ OBJS		:= $(patsubst $(SRCS_DIR)/%.c, $(OBJS_DIR)/%.o, $(SRCS))
 CC			:= gcc
 CC_FLAGS	:= -Wall -Wextra -Werror
 
-FLAGS		:= $(CC_FLAGS) $(MLX_FLAGS) $(LIBFT_FLAGS) $(LEAK_FLAGS)
+FLAGS		:= $(CC_FLAGS) $(MLX_FLAGS) $(LEAK_FLAGS) # $(LIBFT_FLAGS)
 
 all: $(NAME)
 
@@ -62,9 +64,9 @@ $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 	$(CC) $(CC_FLAGS) $(LEAK_FLAGS) $(HEADERS) $< -c -o $@
 	@echo
 
-$(NAME): $(OBJS_DIR) $(OBJS) $(LIBFT)
+$(NAME): $(OBJS_DIR) $(OBJS) # $(LIBFT)
 	@echo "Linking..."
-	$(LIBFT_MAKE)
+	# $(LIBFT_MAKE)
 	$(CC) $(HEADERS) $(FLAGS) $(OBJS) -o $(NAME)
 	@echo
 
@@ -74,8 +76,8 @@ $(OBJS_DIR):
 clean:
 	@echo "Cleaning object files..."
 	@echo
-	$(LIBFT_CLEAN)
-	@echo
+	#$(LIBFT_CLEAN)
+	#@echo
 	@rm -rf obj
 	@echo "Finished cleaning object files"
 	@echo

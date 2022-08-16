@@ -6,7 +6,7 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 22:34:02 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/15 22:39:47 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/15 23:03:46 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,8 @@ int	ft_on_zooming(int key, int x, int y, t_fractol *fractol)
 		fractol->img.ymin -= 0.1 * viewport_range;
 		fractol->img.ymax += 0.1 * viewport_range;
 	}
-	ft_following_mouse(&(fractol->img), x, y);
+	if (key == e_zooming_in || key == e_zooming_out)
+		ft_following_mouse(&(fractol->img), x, y);
 	ft_calculate_fractal(&(fractol->img), fractol->type);
 	mlx_put_image_to_window(fractol->mlx, fractol->mlx_win,
 		fractol->img.img, 0, 0);

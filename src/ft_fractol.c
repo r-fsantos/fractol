@@ -6,7 +6,7 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 21:24:59 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/15 22:42:07 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/15 23:03:09 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,17 @@ void	ft_panning(int key, t_data *img)
 		img->xmin -= 10 * img->step;
 		img->xmax -= 10 * img->step;
 	}
-	else if (key == e_down)
+	else if (key == e_right)
 	{
 		img->xmin += 10 * img->step;
 		img->xmax += 10 * img->step;
 	}
-	else if (key == e_down)
+	else if (key == e_up)
 	{
 		img->ymin -= 10 * img->step;
 		img->ymax -= 10 * img->step;
 	}
-	else if (key == e_up)
+	else if (key == e_down)
 	{
 		img->ymin += 10 * img->step;
 		img->ymax += 10 * img->step;

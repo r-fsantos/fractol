@@ -6,7 +6,7 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:23:10 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/16 08:17:10 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/16 08:34:29 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdio.h>
 # include <mlx.h>
 # include <errno.h>
-# include "libft.h"
+# include "../libs/libft/include/libft.h"
 
 // Defines
 # define MANDELBROT "mandelbrot"

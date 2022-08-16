@@ -6,7 +6,7 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:23:10 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/15 22:40:38 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/16 08:17:10 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,21 @@
 # define MAX_AXIS 2.0
 # define MAX_ITERATIONS 80
 
+# if defined(__linux__) && __linux__
+#  define LEFT_ARROW_KEY 65361
+#  define RIGHT_ARROW_KEY 65362
+#  define UP_ARROW_KEY 65363
+#  define DOWN_ARROW_KEY 65364
+#  define ESC_KEY 65307
+# else
+#  define LEFT_ARROW_KEY 123
+#  define RIGHT_ARROW_KEY 124
+#  define UP_ARROW_KEY 126
+#  define DOWN_ARROW_KEY 125
+#  define ESC_KEY 53
+# endif
+
+
 // Enums
 enum e_error_msg_codes
 {
@@ -56,13 +71,13 @@ enum e_fractals
 
 enum e_keycodes
 {
-	e_left = 123,
-	e_right = 124,
-	e_down = 125,
-	e_up = 126,
+	e_left = LEFT_ARROW_KEY,
+	e_right = RIGHT_ARROW_KEY,
+	e_down = DOWN_ARROW_KEY,
+	e_up = UP_ARROW_KEY,
 	e_zooming_in = 4,
 	e_zooming_out = 5,
-	e_esc = 53
+	e_esc = ESC_KEY
 };
 
 // Structs

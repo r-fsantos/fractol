@@ -6,11 +6,11 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 22:34:02 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/15 23:03:46 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/16 08:50:31 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_fractol.h"
+#include "../includes/ft_fractol.h"
 
 // TODO: Add macros for mlx_hook!
 void	ft_setup_hooks(t_fractol *fractol)

@@ -6,11 +6,11 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 08:51:16 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/07/14 08:53:50 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/16 08:50:40 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_fractol.h"
+#include "../includes/ft_fractol.h"
 
 int	is_julia(char *str)
 {

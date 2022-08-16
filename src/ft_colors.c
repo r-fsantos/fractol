@@ -6,11 +6,11 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 16:29:37 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/13 18:13:36 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/16 08:50:10 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_fractol.h"
+#include "../includes/ft_fractol.h"
 
 static void	ft_mlx_pixel_put(t_data *img, int x, int y, int color);
 

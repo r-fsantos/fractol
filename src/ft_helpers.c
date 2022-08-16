@@ -6,11 +6,11 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 22:52:17 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/15 22:52:27 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/16 08:50:26 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_fractol.h"
+#include "../includes/ft_fractol.h"
 
 int	it_pressed_any_arrow_key(int key)
 {

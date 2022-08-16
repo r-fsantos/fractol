@@ -6,11 +6,11 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 20:27:19 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/02 09:11:52 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/16 08:50:51 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_fractol.h"
+#include "../includes/ft_fractol.h"
 
 void	ft_puterror(int e_error_code, t_fractol *fractol)
 {

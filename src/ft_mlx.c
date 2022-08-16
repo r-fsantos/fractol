@@ -6,11 +6,11 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 09:40:59 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/15 22:41:23 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/16 08:50:47 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_fractol.h"
+#include "../includes/ft_fractol.h"
 
 void	ft_mlx_init(t_fractol *fractol)
 {

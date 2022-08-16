@@ -6,11 +6,11 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 08:47:36 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/13 18:18:32 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/16 08:50:44 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_fractol.h"
+#include "../includes/ft_fractol.h"
 
 int	is_mandelbrot(char *str)
 {

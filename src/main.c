@@ -6,11 +6,11 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:18:26 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/02 09:13:11 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/16 08:50:54 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_fractol.h"
+#include "../includes/ft_fractol.h"
 
 int	main(int argc, char **argv)
 {

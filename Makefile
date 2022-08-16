@@ -6,7 +6,7 @@
 #    By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 21:10:18 by rfelicio          #+#    #+#              #
-#    Updated: 2022/08/13 16:29:55 by rfelicio         ###   ########.fr        #
+#    Updated: 2022/08/15 22:33:56 by rfelicio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,13 +38,14 @@ HEADERS     := -I $(HEADERS_DIR) -I $(LIBFT_HEADERS)
 
 SRCS_DIR	:= ./src
 SRCS		:= $(SRCS_DIR)/main.c				\
-			   $(SRCS_DIR)/ft_colors.c		\
+			   $(SRCS_DIR)/ft_colors.c			\
 			   $(SRCS_DIR)/ft_put_errors.c		\
 			   $(SRCS_DIR)/ft_fractol.c			\
 			   $(SRCS_DIR)/ft_input.c			\
 			   $(SRCS_DIR)/ft_mandelbrot.c		\
 			   $(SRCS_DIR)/ft_julia.c			\
-			   $(SRCS_DIR)/ft_mlx.c			\
+			   $(SRCS_DIR)/ft_mlx.c				\
+			   $(SRCS_DIR)/ft_hooks.c			\
 
 OBJS_DIR	:= ./obj
 OBJS		:= $(patsubst $(SRCS_DIR)/%.c, $(OBJS_DIR)/%.o, $(SRCS))

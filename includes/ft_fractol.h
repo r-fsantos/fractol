@@ -6,7 +6,7 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:23:10 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/15 22:27:02 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/15 22:40:38 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,13 @@ void	ft_mlx_init(t_fractol *fractol);
 int		ft_should_close(t_fractol *fractol);
 void	ft_panning(int key, t_data *img);
 int		it_pressed_any_arrow_key(int key);
+
+// Mlx hooks
+void	ft_setup_hooks(t_fractol *fractol);
+int		ft_on_pressing_key(int key, t_fractol *fractol);
+int		ft_on_zooming(int key, int x, int y, t_fractol *fractol);
+void	ft_following_mouse(t_data *img, int x, int y);
+
 
 // Colors
 void	ft_setup_colors(double x, double y, int iterations, t_data *img);

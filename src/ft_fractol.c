@@ -6,7 +6,7 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 21:24:59 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/15 22:13:03 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/15 22:42:07 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	ft_panning(int key, t_data *img)
 		img->ymin += 10 * img->step;
 		img->ymax += 10 * img->step;
 	}
-
 }
 
 void	ft_calculate_fractal(t_data *img, int type)
@@ -70,7 +69,7 @@ void	ft_calculate_fractal(t_data *img, int type)
 	}
 }
 
-int		it_pressed_any_arrow_key(int key)
+int	it_pressed_any_arrow_key(int key)
 {
-	return (key == e_left || key == e_right || key == e_down ||  key == e_up);
+	return (key == e_left || key == e_right || key == e_down || key == e_up);
 }

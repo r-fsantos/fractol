@@ -6,7 +6,7 @@
 #    By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 21:10:18 by rfelicio          #+#    #+#              #
-#    Updated: 2022/08/16 22:31:07 by rfelicio         ###   ########.fr        #
+#    Updated: 2022/08/19 18:34:15 by rfelicio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ SRCS		:= $(SRCS_DIR)/main.c				\
 			   $(SRCS_DIR)/ft_julia.c			\
 			   $(SRCS_DIR)/ft_mlx.c				\
 			   $(SRCS_DIR)/ft_hooks.c			\
+			   $(SRCS_DIR)/ft_helpers.c			\
 
 OBJS_DIR	:= ./obj
 OBJS		:= $(patsubst $(SRCS_DIR)/%.c, $(OBJS_DIR)/%.o, $(SRCS))

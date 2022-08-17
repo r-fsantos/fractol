@@ -6,7 +6,7 @@
 #    By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 21:10:18 by rfelicio          #+#    #+#              #
-#    Updated: 2022/08/16 22:19:27 by rfelicio         ###   ########.fr        #
+#    Updated: 2022/08/16 22:31:07 by rfelicio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,10 +62,10 @@ $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 	$(CC) $(CC_FLAGS) $(LEAK_FLAGS) $< -c -o $@ $(HEADERS)
 	@echo
 
-$(NAME): $(OBJS_DIR) $(OBJS) $(LIBFT)
+$(NAME): $(OBJS_DIR) $(OBJS)
 	@echo "Linking..."
 	$(LIBFT_MAKE)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME) $(HEADERS)
+	$(CC) $(OBJS) $(FLAGS) -o $(NAME) $(HEADERS)
 	@echo
 
 $(OBJS_DIR):

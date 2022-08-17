@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fractol.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:23:10 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/16 08:34:29 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/17 03:43:37 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@
 
 # if defined(__linux__) && __linux__
 #  define LEFT_ARROW_KEY 65361
-#  define RIGHT_ARROW_KEY 65362
-#  define UP_ARROW_KEY 65363
-#  define DOWN_ARROW_KEY 65364
+#  define RIGHT_ARROW_KEY 65363
+#  define UP_ARROW_KEY 65364
+#  define DOWN_ARROW_KEY 65362
 #  define ESC_KEY 65307
 # else
 #  define LEFT_ARROW_KEY 123

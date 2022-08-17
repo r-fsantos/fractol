@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: coder <coder@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 21:10:18 by rfelicio          #+#    #+#              #
-#    Updated: 2022/08/16 10:12:31 by rfelicio         ###   ########.fr        #
+#    Updated: 2022/08/16 16:22:11 by coder            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ LIBFT_FLAGS		:= -L $(LIBFT_DIR) -lft
 
 # Fractol
 HEADERS_DIR := ./includes
-HEADERS     := -I $(HEADERS_DIR) #-I $(LIBFT_HEADERS)
+HEADERS     := -I $(HEADERS_DIR)
 
 SRCS_DIR	:= ./src
 SRCS		:= $(SRCS_DIR)/main.c				\
@@ -56,18 +56,17 @@ OBJS		:= $(patsubst $(SRCS_DIR)/%.c, $(OBJS_DIR)/%.o, $(SRCS))
 CC			:= gcc
 CC_FLAGS	:= -Wall -Wextra -Werror
 
-FLAGS		:= $(CC_FLAGS) $(MLX_FLAGS) $(LEAK_FLAGS) # $(LIBFT_FLAGS)
+FLAGS		:= $(CC_FLAGS) $(MLX_FLAGS) $(LEAK_FLAGS)
 
 all: $(NAME)
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
-	$(CC) $(CC_FLAGS) $(LEAK_FLAGS) $(HEADERS) $< -c -o $@
+	$(CC) $(CC_FLAGS) $(LEAK_FLAGS) $< -c -o $@ $(HEADERS)
 	@echo
 
-$(NAME): $(OBJS_DIR) $(OBJS) # $(LIBFT)
+$(NAME): $(OBJS_DIR) $(OBJS)
 	@echo "Linking..."
-	# $(LIBFT_MAKE)
-	$(CC) $(HEADERS) $(FLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(OBJS) $(FLAGS) -o $(NAME) $(HEADERS) 
 	@echo
 
 $(OBJS_DIR):
@@ -76,8 +75,6 @@ $(OBJS_DIR):
 clean:
 	@echo "Cleaning object files..."
 	@echo
-	#$(LIBFT_CLEAN)
-	#@echo
 	@rm -rf obj
 	@echo "Finished cleaning object files"
 	@echo

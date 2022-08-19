@@ -6,13 +6,12 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 22:34:02 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/16 08:50:31 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/19 19:03:52 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_fractol.h"
 
-// TODO: Add macros for mlx_hook!
 void	ft_setup_hooks(t_fractol *fractol)
 {
 	mlx_key_hook(fractol->mlx_win, ft_on_pressing_key, fractol);
@@ -22,21 +21,12 @@ void	ft_setup_hooks(t_fractol *fractol)
 	mlx_hook(fractol->mlx_win, 17, 1L << 0, ft_should_close, fractol);
 }
 
-/**
- * TODO:
- * 		Refactor ft_calculate_fractal and mlx_put_image_to_window to some kind
- * 		of reload_fractal()
- **/
 int	ft_on_pressing_key(int key, t_fractol *fractol)
 {
 	if (key == e_esc)
 		ft_should_close(fractol);
 	else if (it_pressed_any_arrow_key(key))
 		ft_panning(key, &(fractol->img));
-	else
-	{
-		printf("pressing key: %d\n", key);
-	}
 	ft_calculate_fractal(&(fractol->img), fractol->type);
 	mlx_put_image_to_window(fractol->mlx, fractol->mlx_win,
 		fractol->img.img, 0, 0);
@@ -67,7 +57,7 @@ int	ft_on_zooming(int key, int x, int y, t_fractol *fractol)
 	ft_calculate_fractal(&(fractol->img), fractol->type);
 	mlx_put_image_to_window(fractol->mlx, fractol->mlx_win,
 		fractol->img.img, 0, 0);
-	return (printf("Clicou com o mouse\nkey: %d\nx: %d  y: %d\n", key, x, y));
+	return (0);
 }
 
 void	ft_following_mouse(t_data *img, int x, int y)

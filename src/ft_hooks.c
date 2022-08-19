@@ -6,7 +6,7 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 22:34:02 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/16 08:50:31 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/19 19:00:09 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	ft_on_zooming(int key, int x, int y, t_fractol *fractol)
 	ft_calculate_fractal(&(fractol->img), fractol->type);
 	mlx_put_image_to_window(fractol->mlx, fractol->mlx_win,
 		fractol->img.img, 0, 0);
-	return (printf("Clicou com o mouse\nkey: %d\nx: %d  y: %d\n", key, x, y));
+	return (0);
 }
 
 void	ft_following_mouse(t_data *img, int x, int y)

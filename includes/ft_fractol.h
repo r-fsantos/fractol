@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fractol.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:23:10 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/17 03:43:37 by coder            ###   ########.fr       */
+/*   Updated: 2022/08/19 18:35:47 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <mlx.h>
 # include <errno.h>
+# include <math.h>
 # include "../libs/libft/include/libft.h"
 
 // Defines
@@ -34,6 +35,7 @@
 # define MIN_AXIS -2.0
 # define MAX_AXIS 2.0
 # define MAX_ITERATIONS 80
+# define JULIA_NBR_ARGS 4
 
 # if defined(__linux__) && __linux__
 #  define LEFT_ARROW_KEY 65361
@@ -49,8 +51,13 @@
 #  define ESC_KEY 53
 # endif
 
-
 // Enums
+enum e_bool
+{
+	false,
+	true
+};
+
 enum e_error_msg_codes
 {
 	e_bad_input = 0,
@@ -93,6 +100,8 @@ typedef struct s_data
 	double	ymin;
 	double	ymax;
 	double	step;
+	double	julia_c_re;
+	double	julia_c_im;
 }	t_data;
 
 typedef struct s_fractol
@@ -120,7 +129,9 @@ void	ft_set_mandelbrot(t_fractol *fractol);
 int		ft_mandelbrot(double x, double y);
 
 // Julia
-int		is_julia(char *str);
+int		is_julia(int argc, char **argv);
+void	ft_set_julia(char **argv, t_fractol *fractol);
+int		ft_julia(double x, double y, double c_re, double c_im);
 
 // Mlx
 void	ft_mlx_init(t_fractol *fractol);
@@ -134,8 +145,12 @@ int		ft_on_pressing_key(int key, t_fractol *fractol);
 int		ft_on_zooming(int key, int x, int y, t_fractol *fractol);
 void	ft_following_mouse(t_data *img, int x, int y);
 
-
 // Colors
 void	ft_setup_colors(double x, double y, int iterations, t_data *img);
+
+// Helpers
+double	ft_atod(char *number);
+int		is_number(char *number);
+double	ft_itod(char *number, int number_len);
 
 #endif

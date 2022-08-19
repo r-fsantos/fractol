@@ -6,7 +6,7 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 21:24:59 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/16 23:11:56 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/19 10:26:04 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	ft_fractol_init(t_fractol *fractol)
 	fractol->img.ymin = MIN_AXIS;
 	fractol->img.ymax = MAX_AXIS;
 	fractol->img.step = (MAX_AXIS - MIN_AXIS) / WIN_SIDE;
+	fractol->img.julia_c_re = 0.0;
+	fractol->img.julia_c_im = 0.0;
 }
 
 void	ft_panning(int key, t_data *img)
@@ -62,6 +64,8 @@ void	ft_calculate_fractal(t_data *img, int type)
 		{
 			if (type == e_mandelbrot)
 				iterations = ft_mandelbrot(x, y);
+			if (type == e_julia)
+				iterations = ft_julia(x, y, img->julia_c_re, img->julia_c_im);
 			ft_setup_colors(x, y, iterations, img);
 			y += img->step;
 		}

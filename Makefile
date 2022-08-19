@@ -6,7 +6,7 @@
 #    By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 21:10:18 by rfelicio          #+#    #+#              #
-#    Updated: 2022/08/19 18:34:15 by rfelicio         ###   ########.fr        #
+#    Updated: 2022/08/19 18:36:00 by rfelicio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,11 @@
 NAME		:= fractol
 
 # Flags
-MLX_FLAGS	:= -lmlx -Ilmlx -lXext -lX11
+MLX_FLAGS	:= -lmlx -Ilmlx -lXext -lX11 -lm
 LEAK_FLAGS	:= 
 
 ifeq ($(shell uname), Darwin) # MacOS
-	MLX_FLAGS	:= -lmlx -framework OpenGL -framework AppKit
+	MLX_FLAGS	:= -lmlx -framework OpenGL -framework AppKit -lm
 	LEAK_FLAGS	:= -g3 -fsanitize=address
 endif
 

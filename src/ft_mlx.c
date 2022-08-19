@@ -6,7 +6,7 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 09:40:59 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/16 08:50:47 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/16 23:51:21 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,15 @@ int	ft_should_close(t_fractol *fractol)
 {
 	if (fractol)
 	{
-		mlx_destroy_image(fractol->mlx, fractol->img.img);
-		mlx_destroy_window(fractol->mlx, fractol->mlx_win);
-		free(fractol->mlx);
+		if (fractol->mlx)
+		{
+			if (fractol->mlx_win)
+			{
+				mlx_destroy_window(fractol->mlx, fractol->mlx_win);
+				mlx_destroy_image(fractol->mlx, fractol->img.img);
+			}
+			free(fractol->mlx);
+		}
 	}
 	exit(0);
 	return (0);

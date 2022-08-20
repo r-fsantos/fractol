@@ -6,7 +6,7 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 22:34:02 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/20 14:54:26 by marvin           ###   ########.fr       */
+/*   Updated: 2022/08/20 16:33:56 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_on_zooming(int key, int x, int y, t_fractol *fractol)
 	float	viewport_range;
 
 	viewport_range = fractol->img.xmax - fractol->img.xmin;
-	if (key == e_zooming_in)
+	if (key == e_zooming_in && fractol->img.step > 0.0000005)
 	{
 		fractol->img.xmin += 0.1 * viewport_range;
 		fractol->img.xmax -= 0.1 * viewport_range;

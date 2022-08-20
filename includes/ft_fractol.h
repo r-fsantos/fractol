@@ -6,7 +6,7 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:23:10 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/19 18:35:47 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/20 08:30:58 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,7 @@ typedef struct s_fractol
 
 // Error handlers
 void	ft_puterror(int e_error_code, t_fractol *fractol);
+void	ft_put_help_msg(int fd);
 
 // Fractol logic
 void	ft_fractol_init(t_fractol *fractol);

@@ -6,7 +6,7 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 09:40:59 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/16 23:51:21 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/20 16:24:51 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	ft_create_img(t_fractol *fractol)
 	ft_calculate_fractal(&(fractol->img), fractol->type);
 	mlx_put_image_to_window(fractol->mlx, fractol->mlx_win,
 		fractol->img.img, 0, 0);
-	mlx_destroy_image(fractol->mlx, &(fractol->img));
 }
 
 /**

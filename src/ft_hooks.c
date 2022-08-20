@@ -16,8 +16,8 @@ void	ft_setup_hooks(t_fractol *fractol)
 {
 	mlx_key_hook(fractol->mlx_win, ft_on_pressing_key, fractol);
 	mlx_mouse_hook(fractol->mlx_win, ft_on_zooming, fractol);
-	mlx_expose_hook(fractol->mlx_win, (void *)ft_calculate_fractal,
-		fractol->mlx);
+	mlx_expose_hook(fractol->mlx_win, (void *)ft_create_img,
+		fractol);
 	mlx_hook(fractol->mlx_win, 17, 1L << 0, ft_should_close, fractol);
 }
 
@@ -54,7 +54,8 @@ int	ft_on_zooming(int key, int x, int y, t_fractol *fractol)
 	}
 	if (key == e_zooming_in || key == e_zooming_out)
 		ft_following_mouse(&(fractol->img), x, y);
-	ft_calculate_fractal(&(fractol->img), fractol->type);
+	ft_create_img(fractol);
+	// ft_calculate_fractal(&(fractol->img), fractol->type);
 	mlx_put_image_to_window(fractol->mlx, fractol->mlx_win,
 		fractol->img.img, 0, 0);
 	return (0);

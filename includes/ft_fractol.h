@@ -123,6 +123,7 @@ void	ft_put_help_msg(int fd);
 void	ft_fractol_init(t_fractol *fractol);
 void	ft_start(int argc, char **argv, t_fractol *fractol);
 void	ft_calculate_fractal(t_data *img, int type);
+void	ft_create_img(t_fractol *fractol);
 
 // Mandelbrot
 int		is_mandelbrot(char *str);

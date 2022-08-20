@@ -53,6 +53,8 @@ int	ft_should_close(t_fractol *fractol)
 {
 	if (fractol)
 	{
+		if (fractol->name)
+			free(fractol->name);
 		if (fractol->mlx)
 		{
 			if (fractol->mlx_win)

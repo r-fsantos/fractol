@@ -27,9 +27,7 @@ int	ft_on_pressing_key(int key, t_fractol *fractol)
 		ft_should_close(fractol);
 	else if (it_pressed_any_arrow_key(key))
 		ft_panning(key, &(fractol->img));
-	ft_calculate_fractal(&(fractol->img), fractol->type);
-	mlx_put_image_to_window(fractol->mlx, fractol->mlx_win,
-		fractol->img.img, 0, 0);
+	ft_create_img(fractol);
 	return (0);
 }
 
@@ -55,9 +53,6 @@ int	ft_on_zooming(int key, int x, int y, t_fractol *fractol)
 	if (key == e_zooming_in || key == e_zooming_out)
 		ft_following_mouse(&(fractol->img), x, y);
 	ft_create_img(fractol);
-	// ft_calculate_fractal(&(fractol->img), fractol->type);
-	mlx_put_image_to_window(fractol->mlx, fractol->mlx_win,
-		fractol->img.img, 0, 0);
 	return (0);
 }
 

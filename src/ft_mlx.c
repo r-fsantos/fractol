@@ -43,11 +43,9 @@ void	ft_create_img(t_fractol *fractol)
 	ft_calculate_fractal(&(fractol->img), fractol->type);
 	mlx_put_image_to_window(fractol->mlx, fractol->mlx_win,
 		fractol->img.img, 0, 0);
+	mlx_destroy_image(fractol->mlx, fractol->img.img);
 }
 
-/**
- * TODO: adicionar mlx_destroy_display; trocar a ordem!!!
- **/
 int	ft_should_close(t_fractol *fractol)
 {
 	if (fractol)
@@ -59,7 +57,7 @@ int	ft_should_close(t_fractol *fractol)
 			if (fractol->mlx_win)
 			{
 				mlx_destroy_window(fractol->mlx, fractol->mlx_win);
-				mlx_destroy_image(fractol->mlx, fractol->img.img);
+				mlx_destroy_display(fractol->mlx);
 			}
 			free(fractol->mlx);
 		}

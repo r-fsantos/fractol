@@ -6,7 +6,7 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 09:40:59 by rfelicio          #+#    #+#             */
-/*   Updated: 2022/08/20 16:24:51 by rfelicio         ###   ########.fr       */
+/*   Updated: 2022/08/21 10:48:27 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_mlx_init(t_fractol *fractol)
 void	ft_create_img(t_fractol *fractol)
 {
 	fractol->img.img = mlx_new_image(fractol->mlx, fractol->win_width,
-		fractol->win_height);
+			fractol->win_height);
 	if (!fractol->img.img)
 		ft_puterror(e_mlx_bad_init, fractol);
 	fractol->img.addr = mlx_get_data_addr(
